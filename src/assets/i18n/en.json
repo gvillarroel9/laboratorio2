@@ -1,0 +1,32 @@
+{
+    "navbar": {
+        "title": "Lab 2",
+        "text": "Applications with Internet Technology 2",
+        "es":"Spanish",
+        "en":"English"
+    },
+    "user": {
+        "list":"Users List",
+        "create": "Create User",
+        "edit": "Edit User",
+        "detail": "User Detail",
+        "fields": {
+            "name":"First and Last Name",
+            "email":"Email",
+            "age":"User Age"
+        },
+        "buttons": {
+            "edit":"Edit",
+            "see":"See",
+            "delete":"Delete"
+        },
+        "errors": {
+            "name":"Name is required",
+            "email":"Email is required",
+            "age":"Age is required",
+            "nonumeric":"Numeric value not support",
+            "emailType":"Please insert a valid Email"
+        }
+
+    }
+}

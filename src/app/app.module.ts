@@ -12,9 +12,12 @@ import { AngularFirestore } from '@angular/fire/firestore';
 import { UserCreateComponent } from './views/user/user-create/user-create.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatButtonModule, MatInputModule, MatSliderModule, MatCardModule, MatListModule } from '@angular/material';
+import {MatButtonModule, MatInputModule, MatSliderModule, MatCardModule, MatListModule, MatToolbar, MatToolbarModule } from '@angular/material';
 import { UserEditComponent } from './views/user/user-edit/user-edit.component';
 import { UserDetailComponent } from './views/user/user-detail/user-detail.component';
+import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
+import {TranslateHttpLoader} from '@ngx-translate/http-loader';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -35,9 +38,22 @@ import { UserDetailComponent } from './views/user/user-detail/user-detail.compon
     MatCardModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
-    MatListModule
+    MatListModule,
+    HttpClientModule,
+    MatToolbarModule,
+        TranslateModule.forRoot({
+            loader: {
+                provide: TranslateLoader,
+                useFactory: HttpLoaderFactory,
+                deps: [HttpClient]
+            }
+        })
   ],
   providers: [AngularFirestore],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http);
+}

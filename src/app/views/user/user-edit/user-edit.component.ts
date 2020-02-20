@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
+import { UserService } from 'src/app/services/user.service';
+import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-user-edit',
@@ -7,11 +9,38 @@ import { Router, ActivatedRoute } from '@angular/router';
   styleUrls: ['./user-edit.component.scss']
 })
 export class UserEditComponent implements OnInit {
+  user: any;
+  userForm: FormGroup;
 
-  constructor(private router: Router, private route: ActivatedRoute) { }
+  constructor(private router: Router, private route: ActivatedRoute,
+    public firebaseService: UserService, 
+    private fb: FormBuilder) { }
 
   ngOnInit() {
-    console.log(this.route.snapshot.paramMap.get("id"));
+    
+    let iduser= this.route.snapshot.paramMap.get("id");
+    this.firebaseService.getUser(iduser)
+    .subscribe(result => {
+      this.user = result.payload.data();
+      this.user.id = iduser;
+      this.userForm = this.fb.group({
+        name: [this.user.name, Validators.required ],
+        surname: [this.user.surname, Validators.required ],
+        age: [this.user.age, Validators.required ]
+      });
+      console.log(this.user);
+    })
+    
+  }
+
+  onSubmit(value){
+    value.avatar=this.user.avatar;
+    this.firebaseService.updateUser(this.user.id, value)
+    .then(
+      res => {
+        this.router.navigate(['/']);
+      }
+    )
   }
 
 }
