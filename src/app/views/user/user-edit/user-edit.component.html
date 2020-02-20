@@ -10,7 +10,7 @@
           </mat-form-field>
           <ng-container >
             <mat-error *ngIf="userForm.get('name').hasError('required') && (userForm.get('name').dirty || userForm.get('name').touched)">{{ 'user.errors.name' | translate }}</mat-error>
-            <mat-error *ngIf="userForm.get('name').hasError('required') && (userForm.get('name').dirty || userForm.get('name').touched)">{{ 'user.errors.nonumeric' | translate }}</mat-error>
+            <mat-error *ngIf="userForm.get('name').hasError('pattern')">{{ 'user.errors.nonumeric' | translate }}</mat-error>
           </ng-container>
         </div>
     
@@ -20,7 +20,7 @@
           </mat-form-field>
           <ng-container >
             <mat-error *ngIf="userForm.get('surname').hasError('required') && (userForm.get('surname').dirty || userForm.get('surname').touched)">{{ 'user.errors.email' | translate }}</mat-error>
-            <mat-error *ngIf="userForm.get('surname').hasError('required') && (userForm.get('surname').dirty || userForm.get('surname').touched)">{{ 'user.errors.emailType' | translate }}</mat-error>
+            <mat-error *ngIf="userForm.get('surname').hasError('email')">{{ 'user.errors.emailType' | translate }}</mat-error>
           </ng-container>
         </div>
     
@@ -30,6 +30,7 @@
           </mat-form-field>
           <ng-container >
             <mat-error *ngIf="userForm.get('age').hasError('required') && (userForm.get('age').dirty || userForm.get('age').touched)">{{ 'user.errors.age' | translate }}</mat-error>
+            <mat-error *ngIf="userForm.get('age').hasError('pattern')">{{ 'user.errors.ageValid' | translate }}</mat-error>
           </ng-container>
         </div>
     

@@ -25,7 +25,8 @@
             "email":"El Correo es requerido",
             "age":"La edad es requerida",
             "nonumeric":"Valores numericos no soportados",
-            "emailType":"Por favor ingrese un email valido"
+            "emailType":"Por favor ingrese un email valido",
+            "ageValid":"Por favor ingrese una edad valida"
         }
     }
 }

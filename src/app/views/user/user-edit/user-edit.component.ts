@@ -24,11 +24,10 @@ export class UserEditComponent implements OnInit {
       this.user = result.payload.data();
       this.user.id = iduser;
       this.userForm = this.fb.group({
-        name: [this.user.name, Validators.required ],
-        surname: [this.user.surname, Validators.required ],
-        age: [this.user.age, Validators.required ]
+        name: [this.user.name,[ Validators.required, Validators.pattern("[A-z' ']*"),] ],
+        surname: [this.user.surname, [Validators.required, Validators.email]],
+        age: [this.user.age, [Validators.required,Validators.pattern("[1-9][0-9]")]]
       });
-      console.log(this.user);
     })
     
   }

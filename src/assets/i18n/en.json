@@ -25,7 +25,8 @@
             "email":"Email is required",
             "age":"Age is required",
             "nonumeric":"Numeric value not support",
-            "emailType":"Please insert a valid Email"
+            "emailType":"Please insert a valid Email",
+            "ageValid":"Please insert a valid Age"
         }
 
     }
