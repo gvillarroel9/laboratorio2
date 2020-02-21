@@ -1,32 +1,32 @@
 {
-    "navbar": {
-        "title": "Laboratorio 2",
-        "text": "Aplicaciones con Tecnología Internet 2",
-        "es":"Español",
-        "en":"Ingles"
+  "navbar": {
+    "title": "Laboratorio 2",
+    "text": "Aplicaciones con Tecnología Internet 2",
+    "es": "Español",
+    "en": "English"
+  },
+  "user": {
+    "list": "Lista de Usuarios",
+    "create": "Crear Usuario",
+    "edit": "Editar Usuario",
+    "detail": "Detalle del Usuario",
+    "fields": {
+      "name": "Nombre y Apellido",
+      "email": "Correo",
+      "age": "Edad"
     },
-    "user": {
-        "list":"Lista de Usuarios",
-        "create": "Crear Usuario",
-        "edit": "Editar Usuario",
-        "detail": "Detalle del Usuario",
-        "fields": {
-            "name":"Nombre y Apellido",
-            "email":"Correo",
-            "age":"Edad"
-        },
-        "buttons": {
-            "edit":"Editar",
-            "see":"Ver",
-            "delete":"Borrar"
-        },
-        "errors": {
-            "name":"El nombre es requerido",
-            "email":"El Correo es requerido",
-            "age":"La edad es requerida",
-            "nonumeric":"Valores numericos no soportados",
-            "emailType":"Por favor ingrese un email valido",
-            "ageValid":"Por favor ingrese una edad valida"
-        }
+    "buttons": {
+      "edit": "Editar",
+      "see": "Ver",
+      "delete": "Borrar"
+    },
+    "errors": {
+      "name": "El nombre es requerido",
+      "email": "El Correo es requerido",
+      "age": "La edad es requerida",
+      "nonumeric": "Valores numericos no soportados",
+      "emailType": "Por favor ingrese un email valido",
+      "ageValid": "Por favor ingrese una edad valida"
     }
+  }
 }

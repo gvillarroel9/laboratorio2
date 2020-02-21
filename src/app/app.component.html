@@ -1,13 +1,29 @@
-
-
-
-    
 <mat-toolbar style="display: flex; justify-content: space-between;">
-    <h1> <a href="/" style="text-decoration: none;">{{ 'navbar.title' | translate }}</a></h1>
-    <h2>{{ 'navbar.text' | translate }}</h2>
-    <div>
-        <button mat-button color="primary" *ngIf="title=='es'" (click)="useLanguage('en')">{{ 'navbar.en' | translate }}</button>
-        <button mat-button color="primary" *ngIf="title=='en'" (click)="useLanguage('es')">{{ 'navbar.es' | translate }}</button>
-    </div>
+  <h1>
+    <a href="/" style="text-decoration: none; color: #ccc">{{
+      "navbar.title" | translate
+    }}</a>
+  </h1>
+  <h2>{{ "navbar.text" | translate }}</h2>
+  <div>
+    <button
+      mat-button
+      color="primary"
+      class="lang"
+      *ngIf="title == 'es'"
+      (click)="useLanguage('en')"
+    >
+      {{ "navbar.en" | translate }}
+    </button>
+    <button
+      mat-button
+      color="primary"
+      class="lang"
+      *ngIf="title == 'en'"
+      (click)="useLanguage('es')"
+    >
+      {{ "navbar.es" | translate }}
+    </button>
+  </div>
 </mat-toolbar>
 <router-outlet></router-outlet>

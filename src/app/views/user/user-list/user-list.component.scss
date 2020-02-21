@@ -1,14 +1,18 @@
-.image{
-    width: 70px;
-    height: 60px;
-    border-radius: 50%;
+.image {
+  width: 70px;
+  height: 60px;
+  border-radius: 50%;
 }
 
-.container{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mat-raised-button.mat-button-base {
+  margin: 0 5px;
 }

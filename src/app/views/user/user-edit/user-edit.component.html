@@ -1,51 +1,102 @@
 <div class="container">
   <mat-card>
-    <mat-card-header> <h1>{{ 'user.buttons.edit' | translate }}</h1></mat-card-header>
+    <mat-card-header>
+      <h1>{{ "user.buttons.edit" | translate }}</h1></mat-card-header
+    >
     <mat-card-content *ngIf="userForm">
-      <form class="create-form" [formGroup]="userForm" novalidate (ngSubmit)="onSubmit(userForm.value)">
-  
+      <form
+        class="create-form"
+        [formGroup]="userForm"
+        novalidate
+        (ngSubmit)="onSubmit(userForm.value)"
+      >
         <div class="form-group">
           <mat-form-field class="input-style">
-            <input matInput placeholder="{{ 'user.fields.name' | translate }}" class="form-control" formControlName="name">
+            <input
+              matInput
+              placeholder="{{ 'user.fields.name' | translate }}"
+              class="form-control"
+              formControlName="name"
+            />
           </mat-form-field>
-          <ng-container >
-            <mat-error *ngIf="userForm.get('name').hasError('required') && (userForm.get('name').dirty || userForm.get('name').touched)">{{ 'user.errors.name' | translate }}</mat-error>
-            <mat-error *ngIf="userForm.get('name').hasError('pattern')">{{ 'user.errors.nonumeric' | translate }}</mat-error>
+          <ng-container>
+            <mat-error
+              *ngIf="
+                userForm.get('name').hasError('required') &&
+                (userForm.get('name').dirty || userForm.get('name').touched)
+              "
+              >{{ "user.errors.name" | translate }}</mat-error
+            >
+            <mat-error *ngIf="userForm.get('name').hasError('pattern')">{{
+              "user.errors.nonumeric" | translate
+            }}</mat-error>
           </ng-container>
         </div>
-    
+
         <div class="form-group">
           <mat-form-field class="input-style">
-            <input matInput placeholder="{{ 'user.fields.email' | translate }}" class="form-control" formControlName="surname">
+            <input
+              matInput
+              placeholder="{{ 'user.fields.email' | translate }}"
+              class="form-control"
+              formControlName="surname"
+            />
           </mat-form-field>
-          <ng-container >
-            <mat-error *ngIf="userForm.get('surname').hasError('required') && (userForm.get('surname').dirty || userForm.get('surname').touched)">{{ 'user.errors.email' | translate }}</mat-error>
-            <mat-error *ngIf="userForm.get('surname').hasError('email')">{{ 'user.errors.emailType' | translate }}</mat-error>
+          <ng-container>
+            <mat-error
+              *ngIf="
+                userForm.get('surname').hasError('required') &&
+                (userForm.get('surname').dirty ||
+                  userForm.get('surname').touched)
+              "
+              >{{ "user.errors.email" | translate }}</mat-error
+            >
+            <mat-error *ngIf="userForm.get('surname').hasError('pattern')">{{
+              "user.errors.emailType" | translate
+            }}</mat-error>
           </ng-container>
         </div>
-    
+
         <div class="form-group">
           <mat-form-field class="input-style">
-            <input matInput type="number" min="0" max="100" placeholder="{{ 'user.fields.age' | translate }}" class="form-control" formControlName="age">
+            <input
+              matInput
+              type="number"
+              min="0"
+              max="100"
+              placeholder="{{ 'user.fields.age' | translate }}"
+              class="form-control"
+              formControlName="age"
+            />
           </mat-form-field>
-          <ng-container >
-            <mat-error *ngIf="userForm.get('age').hasError('required') && (userForm.get('age').dirty || userForm.get('age').touched)">{{ 'user.errors.age' | translate }}</mat-error>
-            <mat-error *ngIf="userForm.get('age').hasError('pattern')">{{ 'user.errors.ageValid' | translate }}</mat-error>
+          <ng-container>
+            <mat-error
+              *ngIf="
+                userForm.get('age').hasError('required') &&
+                (userForm.get('age').dirty || userForm.get('age').touched)
+              "
+              >{{ "user.errors.age" | translate }}</mat-error
+            >
+            <mat-error *ngIf="userForm.get('age').hasError('pattern')">{{
+              "user.errors.ageValid" | translate
+            }}</mat-error>
           </ng-container>
         </div>
-    
+
         <div class="row submit-button-container">
           <div class="col-md-4">
-            <button mat-raised-button class="submit-button" color="primary" type="submit" [disabled]="!userForm.valid">{{ 'user.buttons.edit' | translate }}</button>
+            <button
+              mat-raised-button
+              class="submit-button"
+              color="primary"
+              type="submit"
+              [disabled]="!userForm.valid"
+            >
+              {{ "user.buttons.edit" | translate }}
+            </button>
           </div>
         </div>
-    
       </form>
     </mat-card-content>
-    
   </mat-card>
-  
-  
 </div>
-
-  
